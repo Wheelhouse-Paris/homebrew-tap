@@ -1,7 +1,7 @@
 class Wh < Formula
   desc "The operating infrastructure for autonomous agent factories"
   homepage "https://docs.wheelhouse.paris"
-  version "0.1.0-alpha.9"
+  version "0.1.0-alpha.10"
   license "Apache-2.0"
 
   option "with-podman", "Install Podman container runtime (required to run agents)"
@@ -10,8 +10,8 @@ class Wh < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Wheelhouse-Paris/wheelhouse/releases/download/v0.1.0-alpha.9/wh-aarch64-apple-darwin.tar.gz"
-      sha256 "8993a4617bcef4a18b76f2e3496cf3261168149a31ca39980c26edf2505491b7"
+      url "https://github.com/Wheelhouse-Paris/wheelhouse/releases/download/v0.1.0-alpha.10/wh-aarch64-apple-darwin.tar.gz"
+      sha256 "93b4aaf5c43db61a51a60826135d31f5844684f1a838ba215ef7201a6190362f"
     end
   end
 
