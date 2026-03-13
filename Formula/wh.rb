@@ -10,13 +10,14 @@ class Wh < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Wheelhouse-Paris/wheelhouse/releases/download/v0.1.0-alpha.8/wh-aarch64-apple-darwin"
-      sha256 "762d681cb6b1bd205b4c43b88e7a8a225ac6423867e387a78534d00b88065aab"
+      url "https://github.com/Wheelhouse-Paris/wheelhouse/releases/download/v0.1.0-alpha.8/wh-aarch64-apple-darwin.tar.gz"
+      sha256 "0956ff959ab7285583c927de9282855ea2fd01676799cee3bd6a0363fbc4608d"
     end
   end
 
   def install
-    bin.install Dir["wh-*"].first => "wh"
+    bin.install "wh"
+    bin.install "wh-broker"
   end
 
   def caveats
@@ -34,3 +35,4 @@ class Wh < Formula
     assert_match version.to_s, shell_output("#{bin}/wh --version", 0)
   end
 end
+
