@@ -4,6 +4,10 @@ class Wh < Formula
   version "0.1.0-alpha.5"
   license "Apache-2.0"
 
+  option "with-podman", "Install Podman container runtime (required to run agents)"
+
+  depends_on "podman" if build.with?("podman")
+
   on_macos do
     on_arm do
       url "https://github.com/Wheelhouse-Paris/wheelhouse/releases/download/v0.1.0-alpha.5/wh-aarch64-apple-darwin"
@@ -13,6 +17,17 @@ class Wh < Formula
 
   def install
     bin.install Dir["wh-*"].first => "wh"
+  end
+
+  def caveats
+    unless build.with?("podman")
+      <<~EOS
+        Podman is required to run agents. Install it with:
+          brew install --formula podman
+        Or reinstall wh with Podman included:
+          brew reinstall wheelhouse-paris/tap/wh --with-podman
+      EOS
+    end
   end
 
   test do
