@@ -18,6 +18,7 @@ class Wh < Formula
   def install
     bin.install "wh"
     bin.install "wh-broker"
+    bin.install "wh-telegram"
   end
 
   def caveats
